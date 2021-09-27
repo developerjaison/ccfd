@@ -1,24 +1,14 @@
-# import sys
-# import numpy
-# import pandas
-# import matplotlib
-# import seaborn
-# import scipy
-
-# print('Python: {}'.format(sys.version))
-# print('Numpy: {}'.format(numpy.__version__))
-# print('Pandas: {}'.format(pandas.__version__))
-# print('Matplotlib: {}'.format(matplotlib.__version__))
-# print('Seaborn: {}'.format(seaborn.__version__))
-# print('Scipy: {}'.format(scipy.__version__))
-
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+# import Numpy Package
+# import numpy as np
+# import pandas Package for reading csv file
+import pandas as PDS
+# import pyplot Package for reading draw histogram
+import matplotlib.pyplot as pyplt
+# import seaborn Package for reading draw heatmap
+import seaborn as sbn
 
 # Load the dataset from the csv file using pandas
-data = pd.read_csv('creditcard.csv')
+data = PDS.read_csv('creditcard.csv')
 
 #  Start exploring the dataset
 print(data.columns)
@@ -32,7 +22,7 @@ data = data.sample(frac=0.1, random_state = 1)
 
 # Plot histograms of each parameter 
 data.hist(figsize = (20, 20))
-plt.show()
+pyplt.show()
 
 # Determine number of fraud cases in dataset
 
@@ -47,10 +37,10 @@ print('Valid Transactions: {}'.format(len(data[data['Class'] == 0])))
 
 # Correlation matrix
 corrmat = data.corr()
-fig = plt.figure(figsize = (12, 9))
+fig = pyplt.figure(figsize = (12, 9))
 
-sns.heatmap(corrmat, vmax = .8, square = True)
-# plt.show()
+# sbn.heatmap(corrmat, vmax = .8, square = True)
+# pyplt.show()
 
 # Get all the columns from the dataFrame
 columns = data.columns.tolist()
