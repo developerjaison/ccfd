@@ -17,14 +17,13 @@
         </div>
         <div class="content">
             <div class="row justify-content-md-center pt-5">
-                <div class="col-md-4">
-                    <form action="/success" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="" title="Upload file with creadit card transactions">Upload CSV</label>
-                            <input type="file" name="file" class="form-control">
-                        </div>
-                        <input class="btn btn-primary" type="submit">
-                    </form>
+                <div class="col-md-8">
+                    {{fraudcases}}
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-md-8">
+                    {{validcases}}
                 </div>
             </div>
         </div>
