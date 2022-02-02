@@ -15,15 +15,85 @@
                 </div>
             </div> 
         </div>
-        <div class="content">
+        <div class="container">
             <div class="row justify-content-md-center pt-5">
-                <div class="col-md-8">
-                    {{fraudcases}}
+                <div class="col-md-12">
+                    Outlier Fraction: {{outlier_fraction}}
                 </div>
             </div>
-            <div class="row justify-content-md-center">
-                <div class="col-md-8">
+            <div class="row justify-content-md-center pt-5">
+                <div class="col-md-12">
+                    {{fraudcases}}
+                </div>
+                <div class="col-md-12">
                     {{validcases}}
+                </div>
+            </div>
+            <div class="row justify-content-md-center pt-5">
+                <div class="col-md-12">
+                    <label for="">Amount details of the fraudulent transaction</label>
+                </div>
+                <div class="col-md-12">
+                    Count: {{fraudAmount.count()}}
+                </div>
+                <div class="col-md-12">
+                    Mean: {{fraudAmount.mean()}}
+                </div>
+                <div class="col-md-12">
+                    Std: {{fraudAmount.std()}}
+                </div>
+                <div class="col-md-12">
+                    Max: {{fraudAmount.max()}}
+                </div>
+            </div>
+            <div class="row justify-content-md-center pt-5">
+                <div class="col-md-12">
+                    <label for="">Amount details of valid transaction</label>
+                </div>
+                <div class="col-md-12">
+                    Count: {{validAmount.count()}}
+                </div>
+                <div class="col-md-12">
+                    Mean: {{validAmount.mean()}}
+                </div>
+                <div class="col-md-12">
+                    Std: {{validAmount.std()}}
+                </div>
+                <div class="col-md-12">
+                    Max: {{validAmount.max()}}
+                </div>
+            </div>
+            <div class="row justify-content-md-center pt-5">
+                <div class="col-md-12">
+                    {{plot|safe}}
+                </div>
+            </div>
+            <div class="row justify-content-md-center pt-5">
+                <div class="col-md-12">
+                    <label for="">The model used is Random Forest classifier</label>
+                </div>
+                <div class="col-md-12">
+                    Accuracy: {{acc}}
+                </div>
+                <div class="col-md-12">
+                    Precision: {{prec}}
+                </div>
+                <div class="col-md-12">
+                    Recall: {{rec}}
+                </div>
+                <div class="col-md-12">
+                    F1-Score: {{f1}}
+                </div>
+                <div class="col-md-12">
+                    Matthews correlation coefficient: {{MCC}}
+                </div>
+            </div>
+            <div class="row justify-content-md-center pt-5">
+                <div class="col-md-12">
+                    <label for="">Confusion Matrix</label> 
+                </div>
+                <div class="col-md-12">
+                    {{plot1|safe}}
                 </div>
             </div>
         </div>
